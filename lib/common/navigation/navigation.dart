@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:word_wardrobe/common/tabs/tabs.dart';
 import 'package:word_wardrobe/common/tabs/tabs_screen.dart';
+import 'package:word_wardrobe/features/dictionary/ui/add_word/add_word_screen.dart';
 import 'package:word_wardrobe/features/splash/splash_screen.dart';
 
 const _splashScreenPath = '/';
 const _tabsScreenPath = '/tabs';
+const _addWordScreenPath = 'add';
+
 const _tabParamName = 'tab';
 
 final goRouter = GoRouter(
@@ -23,6 +26,12 @@ final goRouter = GoRouter(
         );
         return TabsScreen(tab: tab);
       },
+      routes: [
+        GoRoute(
+          path: _addWordScreenPath,
+          builder: (context, state) => const AddWordScreen(),
+        ),
+      ],
     ),
   ],
   debugLogDiagnostics: true,
@@ -34,4 +43,8 @@ extension GoRouterExtension on BuildContext {
   void goDictionaryScreen() => go('$_tabsScreenPath/${Tabs.dictionary.name}');
   void goTrainingsScreen() => go('$_tabsScreenPath/${Tabs.trainings.name}');
   void goProfileScreen() => go('$_tabsScreenPath/${Tabs.profile.name}');
+  void goAddWordScreen() {
+    final tab = GoRouterState.of(this).pathParameters[_tabParamName];
+    go('$_tabsScreenPath/$tab/$_addWordScreenPath');
+  }
 }

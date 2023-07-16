@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:word_wardrobe/common/di/di.dart';
 import 'package:word_wardrobe/common/navigation/navigation.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
