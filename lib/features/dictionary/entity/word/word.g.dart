@@ -12,7 +12,8 @@ _$_Word _$$_WordFromJson(Map<String, dynamic> json) => _$_Word(
       translation: json['translation'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       history: (json['history'] as List<dynamic>)
-          .map((e) => WordHistoryItem.fromJson(e as Map<String, dynamic>))
+          .map((e) => SuccessSpaceRepetitionHistoryItem.fromJson(
+              e as Map<String, dynamic>))
           .toList(),
       language: json['language'] as String,
       updatedAt: json['updatedAt'] == null

@@ -7,7 +7,7 @@ import 'package:word_wardrobe/features/dictionary/entity/word/word.dart';
 
 const _storageFileName = 'dictionary.json';
 
-// TODO make work with json async
+// TODO(me): make work with json async
 @singleton
 class DictionaryStorage {
   late final Directory _directory;
@@ -53,7 +53,7 @@ class DictionaryStorage {
 
   List<Word> getAllWords() {
     final words = [..._words];
-    // TODO remove sort
+    // TODO(me): remove sort
     words.sort((a, b) => b.createdAt.compareTo(a.createdAt));
     return words;
   }
@@ -62,6 +62,7 @@ class DictionaryStorage {
     final fileContent = _file.readAsStringSync();
     if (fileContent.isEmpty) return;
     final List<Object?> json = jsonDecode(fileContent);
+    // ignore: cast_nullable_to_non_nullable
     final words = json.map((i) => Word.fromJson(i as Map<String, Object?>));
 
     _words.addAll(words);

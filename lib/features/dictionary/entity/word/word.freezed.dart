@@ -24,7 +24,8 @@ mixin _$Word {
   String get word => throw _privateConstructorUsedError;
   String get translation => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
-  List<WordHistoryItem> get history => throw _privateConstructorUsedError;
+  List<SuccessSpaceRepetitionHistoryItem> get history =>
+      throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -43,7 +44,7 @@ abstract class $WordCopyWith<$Res> {
       String word,
       String translation,
       DateTime createdAt,
-      List<WordHistoryItem> history,
+      List<SuccessSpaceRepetitionHistoryItem> history,
       String language,
       DateTime? updatedAt});
 }
@@ -89,7 +90,7 @@ class _$WordCopyWithImpl<$Res, $Val extends Word>
       history: null == history
           ? _value.history
           : history // ignore: cast_nullable_to_non_nullable
-              as List<WordHistoryItem>,
+              as List<SuccessSpaceRepetitionHistoryItem>,
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -113,7 +114,7 @@ abstract class _$$_WordCopyWith<$Res> implements $WordCopyWith<$Res> {
       String word,
       String translation,
       DateTime createdAt,
-      List<WordHistoryItem> history,
+      List<SuccessSpaceRepetitionHistoryItem> history,
       String language,
       DateTime? updatedAt});
 }
@@ -155,7 +156,7 @@ class __$$_WordCopyWithImpl<$Res> extends _$WordCopyWithImpl<$Res, _$_Word>
       history: null == history
           ? _value._history
           : history // ignore: cast_nullable_to_non_nullable
-              as List<WordHistoryItem>,
+              as List<SuccessSpaceRepetitionHistoryItem>,
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -176,7 +177,7 @@ class _$_Word implements _Word {
       required this.word,
       required this.translation,
       required this.createdAt,
-      required final List<WordHistoryItem> history,
+      required final List<SuccessSpaceRepetitionHistoryItem> history,
       required this.language,
       this.updatedAt})
       : _history = history;
@@ -191,9 +192,9 @@ class _$_Word implements _Word {
   final String translation;
   @override
   final DateTime createdAt;
-  final List<WordHistoryItem> _history;
+  final List<SuccessSpaceRepetitionHistoryItem> _history;
   @override
-  List<WordHistoryItem> get history {
+  List<SuccessSpaceRepetitionHistoryItem> get history {
     if (_history is EqualUnmodifiableListView) return _history;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_history);
@@ -252,7 +253,7 @@ abstract class _Word implements Word {
       required final String word,
       required final String translation,
       required final DateTime createdAt,
-      required final List<WordHistoryItem> history,
+      required final List<SuccessSpaceRepetitionHistoryItem> history,
       required final String language,
       final DateTime? updatedAt}) = _$_Word;
 
@@ -267,7 +268,7 @@ abstract class _Word implements Word {
   @override
   DateTime get createdAt;
   @override
-  List<WordHistoryItem> get history;
+  List<SuccessSpaceRepetitionHistoryItem> get history;
   @override
   String get language;
   @override

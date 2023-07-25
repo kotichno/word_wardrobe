@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
+import 'package:word_wardrobe/common/utils/utils.dart';
 import 'package:word_wardrobe/features/dictionary/data/dictionary_interactor.dart';
 import 'package:word_wardrobe/features/dictionary/entity/word/word.dart';
 
@@ -31,9 +32,9 @@ class AddWordBloc extends Bloc<AddWordEvent, AddWordState> {
       id: _uuid.v4(),
       word: word,
       translation: translation,
-      createdAt: DateTime.now(),
+      createdAt: now,
       history: [],
       language: 'de',
-    ));
+    ),);
   }
 }

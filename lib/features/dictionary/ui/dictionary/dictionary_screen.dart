@@ -4,7 +4,7 @@ import 'package:word_wardrobe/common/di/di.dart';
 import 'package:word_wardrobe/features/dictionary/data/dictionary_interactor.dart';
 import 'package:word_wardrobe/features/dictionary/ui/dictionary/bloc/dictionary_bloc.dart';
 
-// TODO Add empty state
+// TODO(me): Add empty state
 
 class DictionaryScreen extends StatelessWidget {
   const DictionaryScreen({super.key});
@@ -33,6 +33,12 @@ class _DictionaryViewState extends State<_DictionaryView> {
     return Scaffold(
       body: BlocBuilder<DictionaryBloc, DictionaryState>(
         builder: (context, state) {
+          if (state.words.isEmpty) {
+            return const Center(
+              child: Text('No words yet'),
+            );
+          }
+
           return ListView.builder(
             itemCount: state.words.length,
             itemBuilder: (context, index) {
@@ -44,7 +50,7 @@ class _DictionaryViewState extends State<_DictionaryView> {
                   title: Text(word.word),
                   subtitle: Text(word.translation),
                   shape: RoundedRectangleBorder(
-                    side: const BorderSide(width: 1),
+                    side: const BorderSide(),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   trailing: IconButton(

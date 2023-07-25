@@ -23,16 +23,16 @@ class _AddWordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Add Word")),
+      appBar: AppBar(title: const Text('Add Word')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Word", style: Theme.of(context).textTheme.titleLarge),
+            Text('Word', style: Theme.of(context).textTheme.titleLarge),
             TextField(controller: wordTextController),
             const SizedBox(height: 16),
-            Text("Translation", style: Theme.of(context).textTheme.titleLarge),
+            Text('Translation', style: Theme.of(context).textTheme.titleLarge),
             TextField(controller: translationTextController),
             const SizedBox(height: 32),
             ElevatedButton(onPressed: () => _addWord(context), child: const Text('Add Word'))

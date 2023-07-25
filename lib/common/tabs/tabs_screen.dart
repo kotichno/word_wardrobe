@@ -4,7 +4,7 @@ import 'package:word_wardrobe/common/tabs/tabs.dart';
 import 'package:word_wardrobe/features/dictionary/ui/dictionary/dictionary_screen.dart';
 import 'package:word_wardrobe/features/home/home_screen.dart';
 import 'package:word_wardrobe/features/profile/profile_screen.dart';
-import 'package:word_wardrobe/features/trainings/trainings_screen.dart';
+import 'package:word_wardrobe/features/trainings/ui/trainings/trainings_screen.dart';
 
 const _screens = [
   HomeScreen(),

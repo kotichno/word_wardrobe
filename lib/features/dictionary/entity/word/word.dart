@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:word_wardrobe/features/dictionary/entity/word_history_item/word_history_item.dart';
+import 'package:word_wardrobe/features/dictionary/entity/success_space_repetition_history_item/success_space_repetition_history_item.dart';
 
 part 'word.freezed.dart';
 part 'word.g.dart';
@@ -11,7 +11,7 @@ class Word with _$Word {
     required String word,
     required String translation,
     required DateTime createdAt,
-    required List<WordHistoryItem> history,
+    required List<SuccessSpaceRepetitionHistoryItem> history,
     required String language,
     DateTime? updatedAt,
   }) = _Word;
